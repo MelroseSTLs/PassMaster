@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 const {
   View,
   Text,
-  TouchableHighlight,
-  Button,
 } = ReactNative;
 
 class Schedule extends Component{
@@ -16,6 +14,7 @@ class Schedule extends Component{
     return(
       <View style={styles.container}>
         <View style={styles.textBox}>
+          <Text style={styles.title}>Schedule</Text>
           <Text style={styles.text}>It is a day: {this.props.day}</Text>
         </View>
         <View style={styles.schedule}>
@@ -63,6 +62,9 @@ const styles = EStyleSheet.create({
     backgroundColor: '$textBoxColor',
     borderBottomWidth: 1,
     borderBottomColor: '$defaultColor',
+  },
+  title: {
+    fontWeight: '600',
   },
   text: {
     marginLeft: 3,
