@@ -3,7 +3,7 @@ import {loadState, saveState} from './localStorage.js'
 import * as asyncInitialState from 'redux-async-initial-state';
 import reduxReset from 'redux-reset'
 
-import { createStore, applyMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import throttle from 'lodash/throttle'

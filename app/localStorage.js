@@ -36,6 +36,7 @@ export const saveState = (fullState) => {
 
 const exclusions = [
     'timeOut',
+    'counterTime',
     'appState',
     'currentBlock',
     'currentDay',

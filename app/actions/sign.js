@@ -1,21 +1,6 @@
 import * as types from './types'
 
-var counterInterval;
-
-export function signOut(){
-    return {
-        type: types.SIGN_OUT,
-        payload: {},
-    }
-}
-
-export function signIn() {
-    clearInterval(counterInterval);
-    return {
-        type: types.SIGN_IN,
-        payload: {},
-    }
-}
+let counterInterval;
 
 export function setTimeOut() {
     return{
@@ -35,5 +20,14 @@ export function setCounterTime(timeOut) {
                 payload: seconds,
             })
         }, 1000)
+    }
+}
+
+export function resetCounter(){
+    return dispatch => {
+        clearInterval(counterInterval);
+        dispatch({
+            type: types.RESET_COUNTER_TIME
+        })
     }
 }

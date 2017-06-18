@@ -1,16 +1,6 @@
 import createReducer from '../lib/createReducer';
 import * as types from '../actions/types';
 
-export const signedOut = createReducer(false, {
-    [types.SIGN_OUT](state, action){
-        return state = true;
-    },
-
-    [types.SIGN_IN](state, action){
-        return state = false;
-    }
-});
-
 export const timeOut = createReducer(0, {
     [types.RESET_TIME_OUT](state, action){
         return state = 0;
