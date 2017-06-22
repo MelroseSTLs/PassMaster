@@ -4,6 +4,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 const {
   View,
   Text,
@@ -11,15 +12,36 @@ const {
 } = ReactNative;
 
 class ButtonContainer extends Component{
+  props: {
+    title: string,
+    text: string,
+    buttonText: string,
+    onPress: () => any,
+  };
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    onPress: PropTypes.func.isRequired,
+  };
+
   render(){
+    const{
+      title,
+      text,
+      buttonText,
+      onPress,
+    } = this.props;
+
     return(
       <View style={styles.container}>
         <View style={styles.textBox}>
-          <Text style={styles.title}>{this.props.title}</Text>
-          <Text style={styles.text}>{this.props.text}</Text>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.text}>{text}</Text>
         </View>
         <View style={styles.button}>
-          <Button title={this.props.buttonText} onPress={this.props.onPress}/>
+          <Button title={buttonText} onPress={onPress}/>
         </View>
       </View>
     )

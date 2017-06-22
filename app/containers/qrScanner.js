@@ -19,6 +19,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import Timer from '../components/Timer';
 
 class qrScanner extends Component{
   constructor() {
@@ -128,6 +129,7 @@ class qrScanner extends Component{
       <View style={styles.container}>
           <Text style={styles.text}>Scan a qr code to sign out!</Text>
           <QRCodeScanner onRead={this.onSuccess.bind(this)} cameraStyle={styles.scanner}/>
+          <Timer countUp={true} startTime={0} text="Timer" active={false}/>
           <Text>Time since sign out: {this.timeToString(this.props.timeOut)}</Text>
           <TouchableHighlight onPress={() => this.onSuccess({data: '{"class": "234"}'})}>
               <Text>Test</Text>

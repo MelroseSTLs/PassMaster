@@ -31,17 +31,13 @@ class AppContainer extends Component{
 
   }
 
-  reset(){
+  reset = () => {
     this.props.reset()
-  }
+  };
 
   test = () => {
     Actions.Login({initial: false});
   };
-
-  handlePress= () => {
-    Actions.Login({initial: false});
-  }
 
   render(){
     let text;
@@ -50,26 +46,20 @@ class AppContainer extends Component{
     }else{
       text = "Sign In"
     }
+
+    let reset;
+    if(__DEV__){
+      reset = <ButtonContainer title="Reset" text="Reset the state." buttonText="Reset" onPress={this.reset}/>;
+    }else{
+      reset = null;
+    }
     return(
         <View style={styles.view}>
           <View style={styles.container}>
             <Schedule/>
-            <ButtonContainer text="Hello World" title="Sup" buttonText="Test" onPress={this.handlePress}/>
-              <TouchableHighlight onPress={Actions.Scan}>
-                  <Text>{text}</Text>
-              </TouchableHighlight>
-              <TouchableHighlight onPress={() => Actions.Login({initial: false})}>
-                  <Text>Login</Text>
-              </TouchableHighlight>
-              <TouchableHighlight onPress={this.reset.bind(this)}>
-                  <Text>Reset</Text>
-              </TouchableHighlight>
-              <TouchableHighlight onPress={() => {database.insertUser("Aidan", "masc1234")}}>
-                  <Text>Insert</Text>
-              </TouchableHighlight>
-              <View style={styles.button}>
-                  <Button title="Test" onPress={this.test} accessibilityLabel="Test Stuff"/>
-              </View>
+            <ButtonContainer title="Qr" text="This app uses Qr codes as passes to easily let you sign out of a class or get a pass to a room." buttonText="Go to Scanner" onPress={Actions.Scan}/>
+            <ButtonContainer title="Login" text="If you want to change your user, use this." buttonText="Go to Login" onPress={() => Actions.Login({initial: false})}/>
+            {reset}
           </View>
         </View>
     )

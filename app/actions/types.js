@@ -6,6 +6,7 @@ export const SET_TIME_OUT = 'SET_TIME_OUT';
 
 export const SET_BLOCK = 'SET_BLOCK';
 export const SET_DAY = 'SET_DAY';
+export const SET_SCHEDULE = 'SET_SCHEDULE';
 
 export const SET_COUNTER_TIME = 'SET_COUNTER_TIME';
 export const RESET_COUNTER_TIME = 'RESET_COUNTER_TIME';

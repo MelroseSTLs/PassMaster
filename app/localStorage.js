@@ -39,6 +39,7 @@ const exclusions = [
     'counterTime',
     'appState',
     'currentBlock',
+  'blockSchedule',
     'currentDay',
     'currentRoom',
     'timeOut',

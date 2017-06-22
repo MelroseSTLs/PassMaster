@@ -27,6 +27,10 @@ function getAspenDetails() {
                     type: types.SET_DAY,
                     payload: res.schedule.day,
                 });
+                store.dispatch({
+                  type: types.SET_SCHEDULE,
+                  payload: res.schedule.blockSchedule,
+                })
             });
     }catch(err) {
         console.log()

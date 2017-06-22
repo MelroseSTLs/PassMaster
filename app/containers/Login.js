@@ -119,7 +119,7 @@ class Login extends Component {
                     </View>
                     <View style={styles.buttonContainer}>
                         <Button
-                            onPress={Actions.App}
+                            onPress={() => Actions.App()}
                             title="Continue"
                             color="#3b5998"
                             accessibilityLabel="Continue to main content"

@@ -10,6 +10,7 @@
     "axios": "^0.16.1",
     "crypto": "0.0.3",
     "path": "^0.12.7",
+    "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
