@@ -29,9 +29,9 @@ const app = () => (
     <Provider store={store}>
         <Router>
             <Scene key="root">
-                <Scene key="App" component={AppContainer} title="App"/>
-                <Scene key="Scan" component={qrScanner} title="Qr"/>
-                <Scene key="Login" component={Login} title="Login" initial={true} hideNavBar={true}/>
+                <Scene key="App" component={AppContainer} title="App" panHandlers={null}/>
+                <Scene key="Scan" component={qrScanner} title="Qr" panHandlers={null}/>
+                <Scene key="Login" component={Login} title="Login" initial={true} hideNavBar={true} panHandlers={null}/>
             </Scene>
         </Router>
     </Provider>
